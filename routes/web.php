@@ -24,3 +24,6 @@ Route::post('datosPaciente','messageController1@store')->name('messages.store');
 
 Route::view('/historiaClinica','historiaClinica')->name('historiaClinica');
 
+
+Route::view('/nuevoEmpleado','nuevoEmpleado')->name('nuevoEmpleado');
+

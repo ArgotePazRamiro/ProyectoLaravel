@@ -5,8 +5,9 @@
 <div>
   <header>
     <!-- Fixed navbar -->
+    
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <img src = {{ asset('images/medico.png') }} alt="imagen" height="50px" width="40px" id="imagen">  
+      <img src = {{ asset('images/medico.png') }} alt="imagen"  height="60px" width="50px" id="">  
       <a class="navbar-brand" href="#">MI CONSULTORIO</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,7 +34,19 @@
             
           </div>
         </li>
-
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Empleado</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="{{route('nuevoEmpleado')}}">
+                @lang('Nuevo Empleado')
+            </a> 
+            <a class="dropdown-item" href="#">
+              @lang('Modificar Empleado')
+          </a>    
+            
+          </div>
+        </li>
 
 
 

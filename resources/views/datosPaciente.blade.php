@@ -11,7 +11,7 @@
         <br>
         <br>
         <section class="content-header">
-            <h1 style="text-align: center">PACIENTE</h1>
+            <h1 style="text-align: center">NUEVO PACIENTE</h1>
         </section>
         <section class="content">
             <div class="container">
