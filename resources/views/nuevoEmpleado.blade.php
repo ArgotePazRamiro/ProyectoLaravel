@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-success btn-lg" type="submit">Continue to checkout</button>
+                    <button class="btn btn-success btn-lg" type="submit">Continuar</button>
                 </form>
 
             </div>
