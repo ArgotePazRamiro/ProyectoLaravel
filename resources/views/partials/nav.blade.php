@@ -26,17 +26,17 @@
             aria-expanded="false">PACIENTE</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="{{route('datosPaciente')}}">
-                @lang('DATOS DEL PACIENTE')
+                @lang('Datos del Paciente')
             </a> 
             <a class="dropdown-item" href="{{route('historiaClinica')}}">
-              @lang('historiaClinica')
+              @lang('historia Clinica')
           </a>    
             
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Empleado</a>
+            aria-expanded="false">EMPLEADO</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="{{route('nuevoEmpleado')}}">
                 @lang('Nuevo Empleado')

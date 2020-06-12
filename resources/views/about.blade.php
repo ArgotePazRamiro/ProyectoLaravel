@@ -4,19 +4,21 @@
     
 
 @section('content')
-<br><br><br>
-<h1></h1><br>
+<br><br>
+<h1></h1>
 <body><br>
-    <div class="container">
+    <div class="">
         <div class="row">
-          <div class="col">
+          <div class="col" style="background: linear-gradient(to bottom, black 0%, #ffffff 100%)" >
             
-          </div>
-          <div class="col-8">
+          </div>          
+
+          <div class="col-8" style="background: linear-gradient(to bottom, #ffffff 0%, black 100%)">
+            <h1 style="color:black">ACERCA DE NOSOTROS</h1>
             <div id="carouselExampleFade" class="carousel slide carousel-fade shadow-lg p-3 mb-5 bg-white rounded" data-ride="carousel">
                 <div class="carousel-inner ">
                   <div class="carousel-item active">
-                    <img src={{ asset('images/Ramiro.PNG') }} class="d-block w-100" alt="imagen" height="400px" width="500px">
+                    <img src={{ asset('images/Ramiro.PNG') }} class="d-block w-100" alt="imagen" height="400px" width="400px">
                     <div class="carousel-caption">
                         <h1 style="color:black">Ramiro Argote Paz</h1>
                         <p style="color:#FFFF00">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid magni mol</p>
@@ -24,7 +26,7 @@
                       </div>  
                 </div>
                   <div class="carousel-item ">
-                    <img src={{ asset('images/IMG_20180616_213400_083.jpg') }} class="d-block w-100" alt="imagen" height="400px" width="500px">
+                    <img src={{ asset('images/IMG_20180616_213400_083.jpg') }} class="d-block w-100" alt="imagen" height="400px" width="400px">
                     <div class="carousel-caption text-right">
                         <h1 style="color:#062877">Alejandro Quintana Muyba</h1>
                         <p style="color:#FFFF00">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis voluptate</p>
@@ -32,7 +34,7 @@
                       </div>  
                 </div>
                   <div class="carousel-item ">
-                    <img src={{ asset('images/inte.png') }} class="d-block w-100" alt="imagen" height="400px" width="500px">
+                    <img src={{ asset('images/inte.png') }} class="d-block w-100" alt="imagen" height="400px" width="400px">
                     <div class="carousel-caption text-left">
                         <h1 style="color:black">En busca de un tercero</h1>
                         <p style="color:black">Se busca tercer integrante</p>
@@ -54,27 +56,49 @@
                     <img src={{ asset('images/Ramiro.PNG')}} class="bd-placeholder-img rounded-circle" width="140" height="140">
                   <h2>Ramiro Argote</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aspernatur molestias unde dic</p>
-                  <p><a class="btn btn-secondary" href="#" role="button">Mas informacion &raquo;</a></p>
+                  <p><a class="btn btn-secondary" href="https://www.facebook.com/UnCuateRaP" role="button">Mas informacion &raquo;</a></p>
                 </div>
                 <div class="col-lg-5">
                     <img src={{ asset('images/IMG_20180616_213400_083.jpg')}} class="bd-placeholder-img rounded-circle" width="140" height="140">
                   <h2>Alejandro Quintana</h2>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A illum seq</p>
-                  <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                  <p><a class="btn btn-secondary" href="https://www.facebook.com/alejandro.quintana.5203/" role="button" >mas infor &raquo;</a></p>
                 </div>
             </div> 
+            <br><br>
             <div class="row featurette">
                 <div class="col-md-7">
-                  <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                  <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                  <h2 class="featurette-heading" style="color: #3E3E3E">ACERCA DE NOSOTROS. <span class="text" style="color: #C7C7C8" >Quienes somos nosotros?.</span></h2>
+                  <p class="lead" style="color: white">Somos un par de estudiantes que estudian Ing. de Sistemas en la Universidad Privada Domingo Savio.</p>
                 </div>
                 <div class="col-md-5">
-                  <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+                  <img src={{ asset('images/domingoSavio.png')}} alt="domingoSavio" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
                 </div>
-              </div> 
+            </div>
+            <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading" ><span class="text-muted" >"By White Power"</span></h2>
+        <p class="lead" style="color: white">Hecho por Alejandro Quintana y Ramiro Argote... Dos estudiantes que se desvelaron haciendo el proyecto final...Tuvieron miles de errores pero lo solucionaron...</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src={{ asset('images/poderBlanco.png')}} alt="domingoSavio" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500">
+      </div>
+    </div> 
+    <hr class="featurette-divider">
+    
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017-2020 Powered by White Power A & R</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
           </div>
-          <div class="col">
-            3 of 3
+          <div class="col" style="background: linear-gradient(to bottom, black 0%, #ffffff 100%)" >
+            
           </div>
         </div>
     </div>
