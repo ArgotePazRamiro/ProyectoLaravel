@@ -86,7 +86,7 @@
                         <div class="col-md-5 mb-3">
                             <label for="sexo">Sexo</label>
                             <select class="custom-select d-block w-100" id="sexo" name="sexo" required>
-                                <option value="null">Seleccione...</option>
+                                <option> </option>
                                 <option>Masculino</option>
                                 <option>Femenino</option>
                                 <option>Otro</option>
@@ -133,10 +133,9 @@
             'use strict'
 
             window.addEventListener('load', function () {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        
                 var forms = document.getElementsByClassName('needs-validation')
 
-                // Loop over them and prevent submission
                 Array.prototype.filter.call(forms, function (form) {
                     form.addEventListener('submit', function (event) {
                         if (form.checkValidity() === false) {
