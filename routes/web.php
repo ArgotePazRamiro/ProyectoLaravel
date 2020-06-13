@@ -26,5 +26,3 @@ Route::view('/historiaClinica','historiaClinica')->name('historiaClinica');
 
 
 Route::view('/nuevoEmpleado','nuevoEmpleado')->name('nuevoEmpleado');
-
-Route::view('/login','login')->name('login');
