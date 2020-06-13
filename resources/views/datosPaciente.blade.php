@@ -36,7 +36,7 @@
                         {!! $errors->first('apellidoMaterno','<small>:message</small><br>') !!} 
                         </div>
                         <div class="form-group">
-                        <input name="telefono" placeholder="telefono"> <br>
+                        <input name="telefono" placeholder="telefono" > <br>
                         {!! $errors->first('telefono','<small>:message</small><br>') !!} 
                         </div>
                         <div class="form-group">
@@ -49,6 +49,8 @@
                         </div>
                         <div class="form-group"><br>
                         <button class="btn btn-danger">GUARDAR</button>
+                        <button class="btn btn-danger">Siguiente</button>
+
                         </div>
                     </div> 
                     <div class="col">

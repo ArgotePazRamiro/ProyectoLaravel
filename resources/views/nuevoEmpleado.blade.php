@@ -43,7 +43,7 @@
             <div class="col-md-4 order-md-2 mb-4">
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">NUEVO PACIENTE</h4>
+                <h4 class="mb-3">NUEVO EMPLEADO</h4>
                 <form class="needs-validation" novalidate>
                     <div class="mb-3">
                         <label for="ci">Carnet de Identidad</label>
@@ -57,7 +57,7 @@
 
                     <div class="mb-3">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" pattern="[A-Za-z]+" minlength="2" maxlength="20" required>
                         <div class="invalid-feedback">
                             Por favor introduzca su nombre.
                         </div>
@@ -66,16 +66,14 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="apellidoPaterno">Apellido Paterno</label>
-                            <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno"
-                                placeholder="" value="" required>
+                            <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" pattern="[A-Za-z]+" minlength="2" maxlength="20" required>
                             <div class="invalid-feedback">
                                 Por favor introduzca su apellido paterno.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="apellidoMaterno">Apellido Materno</label>
-                            <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno"
-                                placeholder="" value="" required>
+                            <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" pattern="[A-Za-z]+" minlength="2" maxlength="20" required>
                             <div class="invalid-feedback">
                                 Por favor introduzca su apellido materno.
                             </div>
@@ -99,7 +97,7 @@
 
                     <div class="mb-3">
                         <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" required>
+                        <input type="text" class="form-control" id="telefono" name="telefono" minlength="7" pattern="[0-9]+" required>
                         <div class="invalid-feedback">
                             Por favor introduzca su telefono.
                         </div>
@@ -107,7 +105,7 @@
 
                     <div class="mb-3">
                         <label for="direccion">Direccion</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="" required>
+                        <input type="text" class="form-control" id="direccion" name="direccion" pattern="[A-Za-z0-9]+" minlength="2" maxlength="40"required>
                         <div class="invalid-feedback">
                             Por favor introduzca su direccion.
                         </div>

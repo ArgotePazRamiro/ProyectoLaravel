@@ -11,12 +11,12 @@ class messagesController extends Controller
 
         $message = request() -> validate([
 
+            'ci'=>'required',
             'name' => 'required',
-            'email'=> ['required','email'],
             'apellidoPaterno'=>'required',
             'apellidoMaterno'=>'required',
-            'telefono'=>'required',
-            'direccion'=>'required',
+            'telefono'=>['numeric','requerid','min:6','max:8'],
+            'direccion'=>'required|min:5',
             'sexo'=>'required'
              
          ]);
