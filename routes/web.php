@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::view('/','home') ->name ('home');
 Route::view('/about','about') ->name('about');
 
@@ -21,8 +23,10 @@ Route::view('/about','about') ->name('about');
 Route::view('/datosPaciente','datosPaciente')->name('datosPaciente');
 Route::post('datosPaciente','messageController1@store')->name('messages.store');
 
+Route::get('/historiaClinica','histoClinica1Controller@index')->name('listaPacientes.index');
+Route::get('/historiaClinica/{id}','histoClinica1Controller@show')->name('listaPacientes.show');
 
-Route::view('/historiaClinica','historiaClinica')->name('historiaClinica');
+
 
 
 Route::view('/nuevoEmpleado','nuevoEmpleado')->name('nuevoEmpleado');
