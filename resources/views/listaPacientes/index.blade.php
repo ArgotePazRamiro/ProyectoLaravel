@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','historiaClinica')
+@section('title','Lista pacientes')
 
 @section('content')
 <br><br><br>
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($histoCli as $portItem)
+            @forelse ($listaPaciente as $portItem)
             <tr>
                 <th scope="row">{{ $portItem->id }}</th>
                 <td><u><a href="{{ route ('listaPacientes.show', $portItem) }}" style="color: yellow">{{ $portItem->nombres }} {{ $portItem->apPaterno }} {{ $portItem->apMaterno }}</u></a></td>
@@ -34,7 +34,7 @@
 </table>
 <li>no hay archivos</li>
 @endforelse
-{{$histoCli->links()}}
+{{$listaPaciente->links()}}
      
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Buscar Paciente......."  aria-describedby="button-addon2">

@@ -23,8 +23,11 @@ Route::view('/about','about') ->name('about');
 Route::view('/datosPaciente','datosPaciente')->name('datosPaciente');
 Route::post('datosPaciente','messageController1@store')->name('messages.store');
 
-Route::get('/historiaClinica','histoClinica1Controller@index')->name('listaPacientes.index');
-Route::get('/historiaClinica/{id}','histoClinica1Controller@show')->name('listaPacientes.show');
+Route::get('/historiaClinica','ListaPacienteController@index')->name('listaPacientes.index');
+Route::get('/historiaClinica/crear','ListaPacienteController@create')->name('listaPacientes.create');
+Route::post('/historiaClinica','ListaPacienteController@store')->name('listaPacientes.store');
+
+Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->name('listaPacientes.show');
 
 
 
