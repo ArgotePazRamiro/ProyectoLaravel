@@ -50,4 +50,34 @@ class ListaPacienteController extends Controller
         return redirect()->route('listaPacientes.index');
     }
 
+
+    public function edit(Paciente $listaPacientes)
+    {
+        return view('listaPacientes.edit',[
+
+            'listaPacientes'=>$listaPacientes
+        ]);
+    }
+
+    public function update(Paciente $listaPacientes)
+    {
+            $listaPacientes->update([
+            'nroDocumento'=> request('nroDocumento'),
+            'nombres'=> request('nombres'),
+            'apPaterno'=> request('apPaterno'),
+            'apMaterno'=> request('apMaterno'),
+            'direccion'=> request('direccion'),
+            'sexo'=> request('sexo'),
+            'telefonno'=> request('telefonno'),
+            'edad'=> request('edad'),
+        ]);
+        return redirect()->route('listaPacientes.show', $listaPacientes);
+    }
+
+    public function destroy(Paciente $listaPacientes)
+    {
+        $listaPacientes->delete();
+        
+        return redirect()->route('listaPacientes.index');
+    }
 }

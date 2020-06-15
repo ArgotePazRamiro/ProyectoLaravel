@@ -10,7 +10,7 @@
 <h2><u><a href="{{route('listaPacientes.create') }}"> Crear Nuevo Paciente</a></u></h2>
     <table class="table table-striped table-dark">
         <thead>
-            <tr>
+            <tr style="color: black">
                 <th scope="col">ID</th>
                 <th scope="col">Nombre Completo</th>
                 <th scope="col">Sexo</th>

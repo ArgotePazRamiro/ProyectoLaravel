@@ -9,8 +9,16 @@
     <div class="row">
         <div>
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">DATOS DEL PACIENTE</a>
-
+            <h2 class="list-group-item list-group-item-action">DATOS DEL PACIENTE</h2>
+            <form action="{{route('listaPacientes.edit', $listaPacientes)}}">
+                <button class="btn btn-warning btn-lg">Editar Paciente</button>
+            </form>
+            
+            <form action="{{route('listaPacientes.destroy', $listaPacientes)}}" method="POST">
+                @csrf @method('DELETE')
+                <button class="btn btn-danger btn-sm">Eliminar Paciente</button>
+            </form>
+            <br>
             <p class="list-group-item list-group-item list-group-item-dark">{{$listaPacientes ->nroDocumento}}</p>
             <p class="list-group-item list-group-item list-group-item-dark">{{$listaPacientes ->nombres}}</p>
             <p class="list-group-item list-group-item list-group-item-dark">{{$listaPacientes ->apPaterno}}</p>

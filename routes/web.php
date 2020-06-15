@@ -25,9 +25,13 @@ Route::post('datosPaciente','messageController1@store')->name('messages.store');
 
 Route::get('/historiaClinica','ListaPacienteController@index')->name('listaPacientes.index');
 Route::get('/historiaClinica/crear','ListaPacienteController@create')->name('listaPacientes.create');
-Route::post('/historiaClinica','ListaPacienteController@store')->name('listaPacientes.store');
+Route::get('/historiaClinica/{listaPacientes}/editar','ListaPacienteController@edit')->name('listaPacientes.edit');
+Route::patch('/historiaClinica/{listaPacientes}','ListaPacienteController@update')->name('listaPacientes.update');
 
+Route::post('/historiaClinica','ListaPacienteController@store')->name('listaPacientes.store');
 Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->name('listaPacientes.show');
+
+Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destroy')->name('listaPacientes.destroy');
 
 
 
