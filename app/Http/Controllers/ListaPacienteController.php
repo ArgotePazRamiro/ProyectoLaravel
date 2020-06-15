@@ -46,10 +46,8 @@ class ListaPacienteController extends Controller
             'sexo'=> request('sexo'),
             'telefonno'=> request('telefonno'),
             'edad'=> request('edad'),
-
-
-
         ]);
+        return redirect()->route('listaPacientes.index');
     }
 
 }

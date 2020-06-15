@@ -4,8 +4,10 @@
 
 @section('content')
 <br><br><br>
-<h1>Lista de Paciente</h1>
-
+<div class="container">
+<h1 style="align-items: center">Lista de Paciente</h1>
+</div>
+<h2><u><a href="{{route('listaPacientes.create') }}"> Crear Nuevo Paciente</a></u></h2>
     <table class="table table-striped table-dark">
         <thead>
             <tr>
@@ -36,14 +38,6 @@
 @endforelse
 {{$listaPaciente->links()}}
      
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Buscar Paciente......."  aria-describedby="button-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Buscar</button>
-        </div>
-      </div>
-      
-
 
 
 
