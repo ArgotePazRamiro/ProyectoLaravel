@@ -23,17 +23,19 @@ Route::view('/about','about') ->name('about');
 Route::view('/datosPaciente','datosPaciente')->name('datosPaciente');
 Route::post('datosPaciente','messageController1@store')->name('messages.store');
 
+
+Route::resource('historiaClinica','ListaPacienteController')->names('listaPacientes')->parameters(['historiaClinica'=>'listaPacientes']);
+/*
 Route::get('/historiaClinica','ListaPacienteController@index')->name('listaPacientes.index');
 Route::get('/historiaClinica/crear','ListaPacienteController@create')->name('listaPacientes.create');
 Route::get('/historiaClinica/{listaPacientes}/editar','ListaPacienteController@edit')->name('listaPacientes.edit');
 Route::patch('/historiaClinica/{listaPacientes}','ListaPacienteController@update')->name('listaPacientes.update');
-
+Route::post('/historiaClinica/crear','ListaPacienteController@update')->name('listaPacientes.update');
 Route::post('/historiaClinica','ListaPacienteController@store')->name('listaPacientes.store');
 Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->name('listaPacientes.show');
-
 Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destroy')->name('listaPacientes.destroy');
 
-
+*/
 
 
 Route::view('/nuevoEmpleado','nuevoEmpleado')->name('nuevoEmpleado');

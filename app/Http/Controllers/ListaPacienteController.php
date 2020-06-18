@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Paciente;
 use Illuminate\Http\Request;
+use App\Mail\MessageReceived;
+use Illuminate\Support\Facades\Mail;
 
 class ListaPacienteController extends Controller
 {
@@ -31,13 +33,15 @@ class ListaPacienteController extends Controller
     }
     public function create()
     {
-        return view('listaPacientes.create');
+        return view('listaPacientes.create',[
+            'listaPacientes'=> new Paciente
+        ]);
     }
 
     public function store()
     {
-        
-        Paciente:: create([
+
+       $message = Paciente:: create([
             'nroDocumento'=> request('nroDocumento'),
             'nombres'=> request('nombres'),
             'apPaterno'=> request('apPaterno'),
@@ -47,7 +51,10 @@ class ListaPacienteController extends Controller
             'telefonno'=> request('telefonno'),
             'edad'=> request('edad'),
         ]);
+        Mail :: to('aqm1290@gmail.com')->queue(new MessageReceived($message));
+
         return redirect()->route('listaPacientes.index');
+
     }
 
 
@@ -55,7 +62,7 @@ class ListaPacienteController extends Controller
     {
         return view('listaPacientes.edit',[
 
-            'listaPacientes'=>$listaPacientes
+            'listaPacientes'=> $listaPacientes
         ]);
     }
 

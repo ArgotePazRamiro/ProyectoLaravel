@@ -49,8 +49,6 @@
                         </div>
                         <div class="form-group"><br>
                         <button class="btn btn-danger">GUARDAR</button>
-                        <button class="btn btn-danger">Siguiente</button>
-
                         </div>
                     </div> 
                     <div class="col">
