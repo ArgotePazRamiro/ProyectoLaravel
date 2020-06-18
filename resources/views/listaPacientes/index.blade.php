@@ -34,6 +34,7 @@
                 <td>{{ $portItem->nroDocumento }}</td>
                 <td>{{ $portItem->direccion }}</td>
                 <td>{{ $portItem->telefonno}}</td>
+                
             </tr>
             @empty
             </tbody>
