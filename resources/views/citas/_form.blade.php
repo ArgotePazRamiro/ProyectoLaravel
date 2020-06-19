@@ -38,7 +38,7 @@
                         <select class="custom-select d-block w-100" id="medico_id" name="medico_id"
                          required>
                          @foreach ($medicos as $mediItem)
-                            <option value="{{$mediItem->id}}"> {{$mediItem->empleado_id}} </option>
+                            <option value="{{$mediItem->id}}"> {{$mediItem->id}} </option>
                          @endforeach
                         </select>
                         <div class="invalid-feedback">
@@ -52,7 +52,7 @@
                         <select class="custom-select d-block w-100" id="paciente_id" name="paciente_id"
                          required>
                          @foreach ($paciente as $pacItem)
-                            <option value="{{$pacItem->id}}"> {{$pacItem->nombres}} </option>
+                    <option value="{{$pacItem->id}}"> {{$pacItem->nombres}} {{$pacItem->apPaterno}}</option>
                          @endforeach
                         </select>
                         <div class="invalid-feedback">

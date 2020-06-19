@@ -12,9 +12,9 @@
         </a></u></h2>
 
     </div>
-    <table class="table table-striped table-dark ">
+    <table class="table table-bordered table-dark ">
         <thead>
-            <tr style="color: black" class="table-primary">
+            <tr style="color: yellow" class="">
                 <th scope="col">ID</th>
                 <th scope="col">fecha Reserva</th>
                 <th scope="col">Observaciones</th>
@@ -32,17 +32,17 @@
                 <td>{{ $portItem->horaCita}}</td>
                 @foreach ($medicos as $medItem)
 
-                    <td value="{{$medItem->id}}">{{$medItem->empleado_id}}</td>
+                    <td value="{{$medItem->id}}">{{$medItem->id}}</td>
 
                 @endforeach
             
-            @foreach ($paciente as $pacItem)
+                @foreach ($paciente as $pacItem)
 
-                    <td value="{{$pacItem->id}}">{{$pacItem->nombres}}</td>
+                    <td value="{{$pacItem->id}}">{{$pacItem->nombres}} {{$pacItem->apPaterno}} {{$pacItem->apMaterno}}</td>
 
                 @endforeach
-                @empty
             </tbody>
+            @empty
             
         </tr>
         
