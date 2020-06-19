@@ -15,7 +15,7 @@ class CreateHorariosatencionTable extends Migration
     {
         Schema::create('horariosatencion', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->string('fecha');
             $table->integer('medico_id')->unsigned();
             $table->integer('hora_id')->unsigned();
             $table->integer('dia_semana_id')->unsigned();

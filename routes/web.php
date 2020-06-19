@@ -40,15 +40,24 @@ Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destr
 Route::get('/listaEmpleados','ListaEmpleadoController@index')->name('listaEmpleados.index');
 Route::get('/listaEmpleados/crear','ListaEmpleadoController@create')->name('listaEmpleados.create');
 Route::post('/listaEmpleados','ListaEmpleadoController@store')->name('listaEmpleados.store');
-
 Route::get('/listaEmpleados/{listaEmpleados}/editar','ListaEmpleadoController@edit')->name('listaEmpleados.edit');
-
-Route::patch('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@update')->name('listaEmpleados.update');
-
-
+Route::patch('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@update')->name('listaEmpleados.update');   
 //Route::post('/listaEmpleados/crear','ListaEmpleadoController@update')->name('listaEmpleados.update');
 Route::get('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@show')->name('listaEmpleados.show');
 Route::delete('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@destroy')->name('listaEmpleados.destroy');
+
+Route::get('/citas','citaController@index')->name('citas.index');
+Route::get('/citas/crear','citaController@create')->name('citas.create');
+Route::post('/citas','citaController@store')->name('citas.store');
+Route::get('/citas/{citas}/editar','citaController@edit')->name('citas.edit');
+Route::patch('/citas/{citas}','citaController@update')->name('citas.update');   
+
+Route::get('/citas/{citas}','citaController@show')->name('citas.show');
+Route::delete('/citas/{citas}','citaController@destroy')->name('citas.destroy');
+
+
+
+
 
 
 

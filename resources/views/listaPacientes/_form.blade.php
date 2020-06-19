@@ -78,8 +78,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="direccion">Direccion</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" pattern="[A-Za-z0-9]+"
-                        minlength="2" maxlength="40" value="{{$listaPacientes ->direccion}}" required>
+                    <input type="text" class="form-control" id="direccion" name="direccion"
+                        value="{{$listaPacientes ->direccion}}" required>
                     <div class="invalid-feedback">
                         Por favor introduzca su direccion.
                     </div>

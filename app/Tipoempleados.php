@@ -10,3 +10,4 @@ class Tipoempleados extends Model
 
     protected $table ='tipoempleados';
 }
+ 

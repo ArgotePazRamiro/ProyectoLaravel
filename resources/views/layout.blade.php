@@ -21,7 +21,7 @@
         @yield('content')
         </main>
         <footer class="bg-white text-center text-black-50 py-3 shadow">
-            <p class="mb-1">&copy; 2017-2020 Servidores A y R</p>
+            <p class="mb-1">&copy; 2017-2020 Servidores A & R</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacy</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>
