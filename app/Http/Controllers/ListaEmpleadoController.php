@@ -19,10 +19,10 @@ class ListaEmpleadoController extends Controller
     public function show(Empleado $listaEmpleados)
     {
 
-        $tipoEmpleado=Tipoempleados::all();
-        
+        $listaEmpleados=Tipoempleados::all();
+
         return view('listaEmpleados.show',[
-            'listaEmpleados'=>$listaEmpleados],compact('tipoEmpleado'));
+            'listaEmpleados'=>$listaEmpleados],compact('listaEmpleados'));
     }
     public function create()
     {
