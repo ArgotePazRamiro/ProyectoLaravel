@@ -16,13 +16,17 @@
     <div id="app" class="d-flex flex-column h-screen justify-content-between">
         <header>
             @include('partials.nav')
-             
         </header>
         <main class="py-4">
         @yield('content')
         </main>
         <footer class="bg-white text-center text-black-50 py-3 shadow">
-            | Copyright @ {{date('Y')}}
+            <p class="mb-1">&copy; 2017-2020 Servidores A & R</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
         </footer>
     </div>
 </body>

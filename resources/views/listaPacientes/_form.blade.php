@@ -78,8 +78,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="direccion">Direccion</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" pattern="[A-Za-z0-9]+"
-                        minlength="2" maxlength="40" value="{{$listaPacientes ->direccion}}" required>
+                    <input type="text" class="form-control" id="direccion" name="direccion"
+                        value="{{$listaPacientes ->direccion}}" required>
                     <div class="invalid-feedback">
                         Por favor introduzca su direccion.
                     </div>
@@ -90,16 +90,6 @@
                     Cancelar
                 </a>
             </form>
-
         </div>
     </div>
-
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2017-2020 Servidores A y R</p>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Privacy</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Support</a></li>
-        </ul>
-    </footer>
 </div>
