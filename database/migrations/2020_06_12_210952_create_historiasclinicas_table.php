@@ -18,7 +18,7 @@ class CreateHistoriasclinicasTable extends Migration
             $table->string('fechaApertura');
             
             $table->integer('paciente_id')->unsigned();
-            $table->foreign('paciente_id')->references('id')->on('paciente');
+            $table->foreign('paciente_id')->references('id')->on('paciente')->onDelete('set null');
 
             $table->timestamps();
         });

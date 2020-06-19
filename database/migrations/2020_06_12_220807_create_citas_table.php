@@ -21,8 +21,8 @@ class CreateCitasTable extends Migration
 
             $table->integer('medico_id')->unsigned();
             $table->integer('paciente_id')->unsigned();
-            $table->foreign('medico_id')->references('id')->on('medicos');
-            $table->foreign('paciente_id')->references('id')->on('paciente');
+            $table->foreign('medico_id')->references('id')->on('medicos')->onDelete('set null');
+            $table->foreign('paciente_id')->references('id')->on('paciente')->onDelete('set null');
 
             $table->timestamps();
         });

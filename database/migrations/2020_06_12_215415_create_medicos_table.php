@@ -19,7 +19,7 @@ class CreateMedicosTable extends Migration
             $table->integer('especialidad_id')->unsigned();
             $table->integer('empleado_id')->unsigned();
             $table->foreign('empleado_id')->references('id')->on('empleados');
-            $table->foreign('especialidad_id')->references('id')->on('especialidades');
+            $table->foreign('especialidad_id')->references('id')->on('especialidades')->onDelete('set null');
             $table->timestamps();
         });
     }

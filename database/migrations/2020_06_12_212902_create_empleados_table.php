@@ -24,7 +24,7 @@ class CreateEmpleadosTable extends Migration
             $table->timestamps();
 
             $table->integer('tipo_empleado_id')->unsigned();
-            $table->foreign('tipo_empleado_id')->references('id')->on('tipoempleados');
+            $table->foreign('tipo_empleado_id')->references('id')->on('tipoempleados')->onDelete('set null');
         });
     }
 
