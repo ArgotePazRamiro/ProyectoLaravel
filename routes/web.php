@@ -20,8 +20,7 @@ Route::view('/about','about') ->name('about');
 
 
 ##Route::get('/ingresoPaciente','ingrePacienteController')->name('ingresoPaciente');
-Route::view('/datosPaciente','datosPaciente')->name('datosPaciente');
-Route::post('datosPaciente','messageController1@store')->name('messages.store');
+
 
 
 Route::resource('historiaClinica','ListaPacienteController')->names('listaPacientes')->parameters(['historiaClinica'=>'listaPacientes']);
@@ -36,6 +35,8 @@ Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->
 Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destroy')->name('listaPacientes.destroy');
 
 */
+Route::resource('/listaEmpleados','ListaEmpleadoController')->names('listaEmpleados')->parameters(['nuevoEmpleado'=>'listaPacientes']);
 
 
-Route::view('/nuevoEmpleado','nuevoEmpleado')->name('nuevoEmpleado');
+Auth::routes();
+
