@@ -1,5 +1,5 @@
 <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm"
-    style="background: linear-gradient(to left,  #00cc99 0%, #ffffff 100%);">
+    style="background: linear-gradient(to left,  #215347 0%, #ffffff 100%);">
     <div class="container">
         <img src={{ asset('images/medico.png') }} alt="imagen" height="60px" width="50px" id="">
         <a href="#">
