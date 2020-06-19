@@ -35,7 +35,22 @@ Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->
 Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destroy')->name('listaPacientes.destroy');
 
 */
-Route::resource('/listaEmpleados','ListaEmpleadoController')->names('listaEmpleados')->parameters(['nuevoEmpleado'=>'listaPacientes']);
+//Route::resource('/listaEmpleados','ListaEmpleadoController')->names('listaEmpleados')->parameters(['nuevoEmpleado'=>'listaEmpleados']);
+
+Route::get('/listaEmpleados','ListaEmpleadoController@index')->name('listaEmpleados.index');
+Route::get('/listaEmpleados/crear','ListaEmpleadoController@create')->name('listaEmpleados.create');
+Route::post('/listaEmpleados','ListaEmpleadoController@store')->name('listaEmpleados.store');
+
+Route::get('/listaEmpleados/{listaEmpleados}/editar','ListaEmpleadoController@edit')->name('listaEmpleados.edit');
+
+Route::patch('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@update')->name('listaEmpleados.update');
+
+
+//Route::post('/listaEmpleados/crear','ListaEmpleadoController@update')->name('listaEmpleados.update');
+Route::get('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@show')->name('listaEmpleados.show');
+Route::delete('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@destroy')->name('listaEmpleados.destroy');
+
+
 
 
 Auth::routes();

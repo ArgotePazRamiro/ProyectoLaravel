@@ -27,17 +27,17 @@
             @forelse ($listaEmpleados as $portItem)
             <tr>
                 <th scope="row">{{ $portItem->id }}</th>
-                <td><u><a href="{{ route ('listaPacientes.show', $portItem) }}" style="color: yellow">{{ $portItem->nombres }} {{ $portItem->apPaterno }} {{ $portItem->apMaterno }}</u></a></td>
+                <td><u><a href="{{ route ('listaEmpleados.show', $portItem) }}" style="color: yellow">{{ $portItem->nombres }} {{ $portItem->apPaterno }} {{ $portItem->apMaterno }}</u></a></td>
                 <td>{{ $portItem->nroDocumento }}</td>
                 <td>{{ $portItem->direccion }}</td>
                 <td>{{ $portItem->telefonno}}</td>
-                <td>{{ $portItem->descripcion}}</td>
+                <td>{{ $portItem->tipo_empleado_id}}</td>
             </tr>
             @empty
             </tbody>
         </table>
         <p class="list-group-item border-0 mb-3 shadow-sm">
-            No hay Pacientes Registrados
+            No hay Empleados Registrados
         </p>
 @endforelse
 {{$listaEmpleados->links()}}

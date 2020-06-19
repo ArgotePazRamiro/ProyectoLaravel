@@ -37,7 +37,8 @@ class ListaEmpleadoController extends Controller
     }
     public function store()
     {
-                
+        $listaEmpleado=Tipoempleados::all();
+         
         Empleado:: create([
             'nroDocumento'=> request('nroDocumento'),
             'nombres'=> request('nombres'),
@@ -45,31 +46,25 @@ class ListaEmpleadoController extends Controller
             'apMaterno'=> request('apMaterno'),
             'direccion'=> request('direccion'),
             'telefonno'=> request('telefonno'),
-            'tipo_empleado_id'=>request('tipo_empleado_id'),
+            'tipo_empleado_id'=>request('tipo_empleado_id')
         ]);
-        return redirect()->route('listaEmpleados.index');
+        return redirect()->route('listaEmpleados.index',compact('listaEmpleado'));
 
     }
     public function edit(Empleado $listaEmpleados)
     {
-        return view('listaEmpleados.edit',[
 
+        $listaEmpleado=Tipoempleados::all();
+
+        return view('listaEmpleados.edit',[
             'listaEmpleados'=> $listaEmpleados
-        ]);
+        ],compact('listaEmpleado'));
     }
 
     public function update(Empleado $listaEmpleados)
     {
-            $listaEmpleados->update([
-            'nroDocumento'=> request('nroDocumento'),
-            'nombres'=> request('nombres'),
-            'apPaterno'=> request('apPaterno'),
-            'apMaterno'=> request('apMaterno'),
-            'direccion'=> request('direccion'),
-            'telefonno'=> request('telefonno'),
-            'tipo_empleado_id'=>request('tipo_empleado_id')
-            
-        ]);
+
+        $listaEmpleados->update(request()->all());
         return redirect()->route('listaEmpleados.show', $listaEmpleados);
     }
 

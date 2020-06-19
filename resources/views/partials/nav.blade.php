@@ -21,33 +21,18 @@
               @lang('HOME')
           </a>
        </li>
-       
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">PACIENTE</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">
-              @lang('Nuevo Paciente')
-          </a> 
-          <a class="dropdown-item" href="{{route('listaPacientes.index')}}">
-            @lang('Lista de Pacientes')
-          </a>
-        </div>
+       <li class=" nav-item {{ setActive('listaPacientes.index')}}" >
+        <a class="nav-link" href="{{route('listaPacientes.index')}} ">
+          <span data-feather="listaPacientes"></span>
+            @lang('Paciente')
+        </a>
+     </li>
+     <li class=" nav-item {{ setActive('listaEmpleados.index')}}" >
+      <a class="nav-link" href="{{route('listaEmpleados.index')}} ">
+        <span data-feather="listaEmpleados"></span>
+          @lang('Empleado')
+        </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">EMPLEADO</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="{{ route ('listaEmpleados.index') }}">
-              @lang('Nuevo Empleado')
-          </a> 
-          <a class="dropdown-item" href="#">
-            @lang('Modificar Empleado')
-        </a>    
-          
-        </div>
-      </li>
-          
         <li class=" nav-item {{ setActive('about') }}" >
           <a class="nav-link" href="{{route('about')}}">
             @lang('ABOUT')

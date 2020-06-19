@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Crear nuevo paciente')
+@section('title','Crear nuevo empleado')
 
 
 @section('content')
