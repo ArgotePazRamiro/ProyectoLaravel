@@ -10,11 +10,12 @@ class Empleado extends Model
     protected $fillable=['nroDocumento','nombres','apPaterno','apMaterno','direccion','telefonno','tipo_empleado_id'];
     protected $table ='empleados';
 
+
     public function scopeName($query,$descripcion)
     {
-        if(trin($descripcion)!="")
+        if(trim($descripcion)!="")
         {
-            $query->where(DB::raw("id","LIKE","%$descripcion%"));
+            $query->where(DB::raw("LIKE","%$descripcion%"));
         }
     }
 }

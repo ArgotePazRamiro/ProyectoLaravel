@@ -31,7 +31,7 @@
                 <td>{{ $portItem->nroDocumento }}</td>
                 <td>{{ $portItem->direccion }}</td>
                 <td>{{ $portItem->telefonno}}</td>
-                <td>{{ $portItem->tipo_empleado_id}}</td>
+                <td>{{ $portItem->descripcion}}</td>
             </tr>
             @empty
             </tbody>

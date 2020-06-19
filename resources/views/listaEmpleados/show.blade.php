@@ -13,6 +13,7 @@
         <p class="list-group-item list-group-item list-group-item-dark">{{$listaEmpleados ->apMaterno}}</p>
         <p class="list-group-item list-group-item list-group-item-dark">{{$listaEmpleados ->direccion}}</p>
         <p class="list-group-item list-group-item list-group-item-dark">{{$listaEmpleados ->telefonno}}</p>
+        <p class="list-group-item list-group-item list-group-item-dark">{{$listaEmpleados ->tipo_empleado_id}}</p>
 
         <div class="d-flex justify-content-between
             align-items-center">        

@@ -12,28 +12,32 @@ class ListaEmpleadoController extends Controller
     
     public function index()
     {
+        $listaEmpleado=Tipoempleados::all();
+
         return view('listaEmpleados.index',[
             'listaEmpleados'=> Empleado::latest()->paginate()
-        ]);
+        ],compact('listaEmpleado'));
     }
     public function show(Empleado $listaEmpleados)
     {
 
+        $listaEmpleado=Tipoempleados::all();
 
         return view('listaEmpleados.show',[
-            'listaEmpleados'=>$listaEmpleados]);
+            'listaEmpleados'=>$listaEmpleados
+        ],compact('listaEmpleado'));
     }
     public function create()
     {
-        $listaEmpleados=Tipoempleados::all();
+        $listaEmpleado=Tipoempleados::all();
 
         return view('listaEmpleados.create',[
             'listaEmpleados'=> new Empleado
-        ],compact('listaEmpleados'));
+        ],compact('listaEmpleado'));
     }
     public function store()
     {
-
+                
         Empleado:: create([
             'nroDocumento'=> request('nroDocumento'),
             'nombres'=> request('nombres'),
@@ -41,6 +45,7 @@ class ListaEmpleadoController extends Controller
             'apMaterno'=> request('apMaterno'),
             'direccion'=> request('direccion'),
             'telefonno'=> request('telefonno'),
+            'tipo_empleado_id'=>request('tipo_empleado_id'),
         ]);
         return redirect()->route('listaEmpleados.index');
 
@@ -62,6 +67,7 @@ class ListaEmpleadoController extends Controller
             'apMaterno'=> request('apMaterno'),
             'direccion'=> request('direccion'),
             'telefonno'=> request('telefonno'),
+            'tipo_empleado_id'=>request('tipo_empleado_id')
             
         ]);
         return redirect()->route('listaEmpleados.show', $listaEmpleados);

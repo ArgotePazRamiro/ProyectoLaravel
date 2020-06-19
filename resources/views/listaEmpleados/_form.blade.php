@@ -64,11 +64,11 @@
                 
                 <div class="row">
                     <div class="col-md-5 mb-3">
-                        <label for="tipoEmpleado">Tipo de Empleado</label>
-                        <select class="custom-select d-block w-100" id="tipoEmpleado" name="tipoEmpleado"
+                        <label for="tipo_empleado_id">Tipo de Empleado</label>
+                        <select class="custom-select d-block w-100" id="tipo_empleado_id" name="tipo_empleado_id"
                          required>
-                         @foreach ($listaEmpleados as $portItem)
-                        <option value="{{$portItem->id}}">{{$portItem->descripcion}} </option>
+                         @foreach ($listaEmpleado as $portItem)
+                            <option value="{{$portItem->id}}"> {{$portItem->descripcion}} </option>
                          @endforeach
                         </select>
                         <div class="invalid-feedback">
