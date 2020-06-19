@@ -23,7 +23,7 @@ class CreateEmpleadosTable extends Migration
             $table->string('telefonno');
             $table->timestamps();
 
-            $table->integer('tipo_empleado_id')->unsigned();
+            $table->integer('tipo_empleado_id')->unsigned()->nullable();
             $table->foreign('tipo_empleado_id')->references('id')->on('tipoempleados')->onDelete('set null');
         });
     }
