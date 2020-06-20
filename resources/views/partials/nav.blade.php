@@ -1,8 +1,12 @@
 <nav class="navbar navbar-light navbar-expand-lg bg-white shadow-sm"
     style="background: linear-gradient(to left,  #215347 0%, #ffffff 100%);">
     <div class="container">
+    @auth
+          <h4>Bienvenido {{ auth()->user()->name}}</h4>
+    @endauth
+
         <img src={{ asset('images/medico.png') }} alt="imagen" height="60px" width="50px" id="">
-        <a href="#">
+    <a href="{{route('home')}}">
             MI CONSULTORIO
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -42,7 +46,24 @@
                         @lang('ABOUT')
                     </a>
                 </li>
+                @auth
+                <li class=" nav-item"  >
+                    <a href="#" style="color: red" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Cerrar Sesion</a>
+                </li>
+                @else
+                
+                <li class=" nav-item {{ setActive('login') }}" >
+                    <a href="{{route('login')}}" style="color:red">
+                            @lang('LOGIN')
+                        </a>
+                </li>
+                @endauth
+                
             </ul>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </div>
     </div>
 </nav>

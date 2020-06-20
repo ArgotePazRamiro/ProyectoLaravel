@@ -38,11 +38,13 @@
             </tr>
             @empty
             </tbody>
+
         </table>
         <p class="list-group-item border-0 mb-3 shadow-sm">
             No hay Pacientes Registrados
         </p>
 @endforelse
+
 {{$listaPaciente->links()}}
      
 </div>

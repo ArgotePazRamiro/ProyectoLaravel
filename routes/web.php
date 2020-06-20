@@ -23,7 +23,12 @@ Route::view('/about','about') ->name('about');
 
 
 
-Route::resource('historiaClinica','ListaPacienteController')->names('listaPacientes')->parameters(['historiaClinica'=>'listaPacientes']);
+Route::resource('historiaClinica','ListaPacienteController')
+        ->names('listaPacientes')
+        ->parameters(['historiaClinica'=>'listaPacientes'])
+        ->middleware('auth');
+
+
 /*
 Route::get('/historiaClinica','ListaPacienteController@index')->name('listaPacientes.index');
 Route::get('/historiaClinica/crear','ListaPacienteController@create')->name('listaPacientes.create');
@@ -55,6 +60,7 @@ Route::patch('/citas/{citas}','citaController@update')->name('citas.update');
 Route::get('/citas/{citas}','citaController@show')->name('citas.show');
 Route::delete('/citas/{citas}','citaController@destroy')->name('citas.destroy');
 
+Auth::routes(['register'=>false]);
 
 
 

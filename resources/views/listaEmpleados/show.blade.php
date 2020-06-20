@@ -24,6 +24,8 @@
             <a href="{{route('listaEmpleados.index')}}">
                 Regresar
             </a>
+            @auth
+                
             <div class="btn-group btn-group-sm">
                 <a class="btn btn-warning"
                 href="{{route('listaEmpleados.edit',$listaEmpleados)}}">
@@ -36,6 +38,8 @@
                     Eliminar
                 </a>
             </div>
+            @endauth
+
             <form action="{{route('listaEmpleados.destroy', $listaEmpleados)}}" 
                 id="delete-empleado"
                 method="POST"
