@@ -8,9 +8,9 @@
         <h1 style="align-items: center">Lista De Citas</h1>
         <!-- Boton para crear .... autentificar-->
         @auth
-            
-        <h2><u><a class="btn btn-primary mb-0" href="{{route('citas.create') }}"> 
-            Crear Nueva Cita
+
+        <h2><u><a class="btn btn-primary mb-0" href="{{ route('citas.create') }}">
+                    Crear Nueva Cita
         </a></u></h2>
         @endauth
 
@@ -28,37 +28,39 @@
             </tr>
         </thead>
         <tbody>
-            @forelse ($cita as $portItem)
+            @forelse($cita as $portItem)
             <tr>
                 <th scope="row">{{ $portItem->id }}</th>
-                <td>{{ $portItem->fechaReserva}}</td> 
+                <td>{{ $portItem->fechaReserva }}</td>
                 <td>{{ $portItem->observaciones }}</td>
-                <td>{{ $portItem->horaCita}}</td>
-                @foreach ($medicos as $medItem)
+                <td>{{ $portItem->horaCita }}</td>
+                @foreach($medicos as $medItem)
 
-                    <td value="{{$medItem->id}}">{{$medItem->id}}</td>
-
-                @endforeach
-            
-                @foreach ($paciente as $pacItem)
-
-                    <td value="">{{$pacItem->nombres}} {{$pacItem->apPaterno}} {{$pacItem->apMaterno}}</td>
+                <td value="{{ $medItem->id }}">{{ $medItem->id }}</td>
 
                 @endforeach
-            </tbody>
-            @empty
-            
+
+                @foreach($paciente as $pacItem)
+
+                <td value="">{{ $pacItem->nombres }} {{ $pacItem->apPaterno }} {{ $pacItem->apMaterno }}
+                </td>
+
+                @endforeach
+        </tbody>
+
         </tr>
-        
-        </table>
+        @empty
 
         <p class="list-group-item border-0 mb-3 shadow-sm">
             no hay Citas.
         </p>
+        @endforelse
+    </table>
 
-{{$cita->links()}}
-@endforelse
-     
+
+
+    {{ $cita->links() }}
+
 </div>
 
 

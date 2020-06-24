@@ -13,7 +13,7 @@ class Citas extends Model
     protected $table ='citas';
 
 
-    public function scopeName($query,$nombres)
+   /* public function scopeName($query,$nombres)
     {
         if(trim($description)!= "")
         {
@@ -21,6 +21,14 @@ class Citas extends Model
                    ->join('paciente', 'citas.id', '=', 'paciente.id')
                    ->join('medicos','citas.id','=','medicos.id')
                    ->select('cita.*', 'paciente.nombres','medicos.id');
+        }
+    }*/
+    public function scopeName($query,$id,$nombres)
+    {
+        if(trim($descripcion)!="")
+        {
+            $query->where(DB::raw("LIKE","%$nombres%")
+                                ->raw("LIKE","%id"));
         }
     }
 }

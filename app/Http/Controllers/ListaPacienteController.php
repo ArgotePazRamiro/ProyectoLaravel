@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Paciente;
+use App\Citas;
 use Illuminate\Http\Request;
 use App\Mail\MessageReceived;
 use Illuminate\Support\Facades\Mail;
+
 
 class ListaPacienteController extends Controller
 {
@@ -15,6 +17,7 @@ class ListaPacienteController extends Controller
      */
     public function index()
     {
+        
         return view('listaPacientes.index',[
             'listaPaciente'=> Paciente::latest()->paginate()
         ]);
