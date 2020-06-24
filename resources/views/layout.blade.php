@@ -29,7 +29,9 @@
             </ul>
         </footer>
     </div>
+    
 </body>
+@stack('js')
 </html> 
 
 

@@ -40,12 +40,13 @@
             </tr>
             @empty
             </tbody>
-@endforelse
+            <p class="list-group-item border-0 mb-3 shadow-sm">
+                No hay Empleados Registrados
+            </p>
+            @endforelse
 
         </table>
-        <p class="list-group-item border-0 mb-3 shadow-sm">
-            No hay Empleados Registrados
-        </p>
+        
 {{$listaEmpleados->links()}}
      
 </div>

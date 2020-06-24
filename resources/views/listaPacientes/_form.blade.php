@@ -4,7 +4,7 @@
         <div class="col-md-4 order-md-2 mb-4">
         </div>
         <div class="col-md-8 order-md-1">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation" id="form" novalidate>
                 <div class="mb-3">
                     <label for="nroDocumento">Carnet de Identidad</label>
                     <input type="text" class="form-control" id="nroDocumento" name="nroDocumento"
