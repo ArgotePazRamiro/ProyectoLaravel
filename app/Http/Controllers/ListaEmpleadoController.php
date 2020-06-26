@@ -13,13 +13,23 @@ class ListaEmpleadoController extends Controller
         $this->middleware('auth')->except('index','show');
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $listaEmpleado=Tipoempleados::all();
 
-        return view('listaEmpleados.index',[
+         if($request)
+        {
+            $query = trim($request->get('search'));
+
+            $listaEmpleado= Empleado::where('nombres','LIKE',"%$query%")
+                                 ->orderBy('id','asc')
+                                 ->get();
+
+        return view('listaEmpleados.index',['listaEmpleados'=>$listaEmpleado,'search'=>$query],compact('listaEmpleado'));
+        } 
+        /* return view('listaEmpleados.index',[
             'listaEmpleados'=> Empleado::latest()->paginate()
-        ],compact('listaEmpleado'));
+        ],compact('listaEmpleado')); */
     }
     public function show(Empleado $listaEmpleados)
     {

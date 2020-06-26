@@ -6,6 +6,24 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 style="align-items: center">Lista de Empleado</h1>
+        <label for="">buscar empleado</label>
+        <nav class="navbar navbar-light float-right">
+            <form class="form-inline">
+          
+              <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+          
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </nav>
+        <h6>
+            @if ($search)
+                <div class="alert alert-primary" role="alert">
+                    
+                    Los resultados de la busqueda de pacientes {{ $search }} son:
+                </div>
+                @else
+            @endif
+        </h6> 
         <!-- Boton para crear .... autentificar-->
         @auth
         <h2><u><a class="btn btn-primary mb-0" href="{{route('listaEmpleados.create') }}"> 
@@ -47,7 +65,7 @@
 
         </table>
         
-{{$listaEmpleados->links()}}
+{{-- {{$listaEmpleado->links()}} --}}
      
 </div>
 

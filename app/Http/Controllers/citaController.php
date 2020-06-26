@@ -15,12 +15,17 @@ class citaController extends Controller
     
     public function index()
     {
-        $paciente=Paciente::all();
-        $medicos=Medicos::all();
+        $data= Citas::join('paciente','citas.paciente_id','=','paciente.id')
+                    ->join('medicos','citas.medico_id','=','medicos.id')
+                    ->join('empleados','medicos.empleado_id','=','empleados.id')
+                    ->select('citas.*','empleados.nombres as nombresEmpleado','paciente.nombres as nombresPaciente')
+                    ->get();
+        //$paciente=Paciente::all();
+        //$medicos=Medicos::all();
 
         return view('citas.index',[
             'cita'=> Citas::latest()->paginate()
-        ],compact('paciente','medicos'));
+        ],compact('data'));
     }
     public function show(Citas $cita)
     {

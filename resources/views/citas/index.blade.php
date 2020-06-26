@@ -22,30 +22,23 @@
                 <th scope="col">fecha Reserva</th>
                 <th scope="col">Observaciones</th>
                 <th scope="col">hora Cita</th>
-                <th scope="col">Medico</th>
-                <th scope="col">Id del paciente</th>
+                <th scope="col">Nombre del Medico</th>
                 <th scope="col">Nombre del Paciente</th>
             </tr>
         </thead>
         <tbody>
-            @forelse($cita as $portItem)
+            @forelse($data as $portItem)
             <tr>
                 <th scope="row">{{ $portItem->id }}</th>
                 <td>{{ $portItem->fechaReserva }}</td>
                 <td>{{ $portItem->observaciones }}</td>
                 <td>{{ $portItem->horaCita }}</td>
-                @foreach($medicos as $medItem)
 
-                <td value="{{ $medItem->id }}">{{ $medItem->id }}</td>
+                <td>{{ $portItem->nombresEmpleado }}</td>
 
-                @endforeach
+                <td>{{ $portItem->nombresPaciente }}</td>
 
-                @foreach($paciente as $pacItem)
-
-                <td value="">{{ $pacItem->nombres }} {{ $pacItem->apPaterno }} {{ $pacItem->apMaterno }}
-                </td>
-
-                @endforeach
+                
         </tbody>
 
         </tr>
