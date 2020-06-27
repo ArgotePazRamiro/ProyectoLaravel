@@ -43,6 +43,7 @@ Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destr
 //Route::resource('/listaEmpleados','ListaEmpleadoController')->names('listaEmpleados')->parameters(['nuevoEmpleado'=>'listaEmpleados']);
 
 Route::get('/listaEmpleados','ListaEmpleadoController@index')->name('listaEmpleados.index');
+//Route::get('/listaEmpleados/search','ListaEmpleadoController@search')->name('listaEmpleados.search');
 Route::get('/listaEmpleados/crear','ListaEmpleadoController@create')->name('listaEmpleados.create');
 Route::post('/listaEmpleados','ListaEmpleadoController@store')->name('listaEmpleados.store');
 Route::get('/listaEmpleados/{listaEmpleados}/editar','ListaEmpleadoController@edit')->name('listaEmpleados.edit');

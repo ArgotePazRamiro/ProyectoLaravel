@@ -11,11 +11,33 @@ class Empleado extends Model
     protected $table ='empleados';
 
 
-    public function scopeName($query,$descripcion)
+    /* public function scopeName($query,$descripcion)
     {
         if(trim($descripcion)!="")
         {
             $query->where(DB::raw("LIKE","%$descripcion%"));
         }
+    } */
+    public function scopeNombres($query,$nombres)
+    {
+        if($nombres)
+        {
+            return $query->where('nombres','like',"%nombres%");
+        }
     }
+
+    public function scopeApPaterno($query,$apPaterno)
+    {
+        if($apPaterno)
+        {
+            return $query->where('apPaterno','like',"%apPaterno%");
+        }
+    }
+    public function scopeNroDocument($query,$nroDocumento)
+    {
+        if($nroDocumento)
+        {
+            return $query->where('nroDocumento','like',"%nroDocumento%");
+        }
+    } 
 }

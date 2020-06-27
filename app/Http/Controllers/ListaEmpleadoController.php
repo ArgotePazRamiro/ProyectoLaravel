@@ -15,21 +15,31 @@ class ListaEmpleadoController extends Controller
 
     public function index(Request $request)
     {
-        $listaEmpleado=Tipoempleados::all();
 
-         if($request)
-        {
-            $query = trim($request->get('search'));
+        $nombres= $request->get('nombres');
+        $apPaterno= $request->get('apPaterno');
+        $nroDocumento= $request->get('nroDocumento');
 
-            $listaEmpleado= Empleado::where('nombres','LIKE',"%$query%")
-                                 ->orderBy('id','asc')
-                                 ->get();
+        $listaEmpleado=Empleado::nombres($nombres)->apellidoPaterno($apPaterno)->nroDocumento('nroDocumento');
 
-        return view('listaEmpleados.index',['listaEmpleados'=>$listaEmpleado,'search'=>$query],compact('listaEmpleado'));
-        } 
-        /* return view('listaEmpleados.index',[
+            /*  if($request)
+            {
+                $query = trim($request->get('search'));
+
+                $listaEmpleados= Empleado::where('nombres','LIKE',"%$query%")
+                                    ->orderBy('id','asc')
+                                    ->get();
+
+            return view('listaEmpleados.index',['listaEmpleados'=>$listaEmpleado,'search'=>$query],compact('listaEmpleados'));
+            }   */
+
+            $data= Empleado::join('tipoempleados','empleados.tipo_empleado_id','=','tipoempleados.id')
+            ->select('empleados.*','tipoempleados.descripcion as descripcionEmpleado')
+            ->get();
+            
+        return view('listaEmpleados.index',[
             'listaEmpleados'=> Empleado::latest()->paginate()
-        ],compact('listaEmpleado')); */
+        ],compact('listaEmpleado'));
     }
     public function show(Empleado $listaEmpleados)
     {
@@ -48,6 +58,21 @@ class ListaEmpleadoController extends Controller
             'listaEmpleados'=> new Empleado
         ],compact('listaEmpleado'));
     }
+   /*  public function search(Request $request)
+    {
+        $nombres=$request->get('nombres');
+        $apellidoPaterno=$request->get('apellidoPaterno');
+        $nroDocumento   =$request->get('nroDocumento'); 
+
+        $data =Empleado::orderBy('id','DESC')
+            ->nombres('nombres')
+            ->apellidoPaterno('apellidoPaterno')
+             ->nroDocumento('nroDocumento') 
+            ->paginate(5);
+
+        return view('listaEmpleados.index',compact('data'));
+
+    } */
     public function store()
     {
         $listaEmpleado=Tipoempleados::all();
