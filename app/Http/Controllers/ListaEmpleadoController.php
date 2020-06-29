@@ -15,13 +15,24 @@ class ListaEmpleadoController extends Controller
 
     public function index(Request $request)
     {
+        $request->user()->authorizeRoles('ale');
+        $nombres=$request->get('nombres');
+        $apPaterno=$request->get('apPaterno');
+        $apMaterno=$request->get('apMaterno');
 
-        $nombres= $request->get('nombres');
+        $data=Empleado::join('tipoempleados','empleados.tipo_empleado_id','=','tipoempleados.id')
+                        ->select('empleados.*','tipoempleados.descripcion as descripcionEmpleado')
+                        ->nombres($nombres)->apPaterno($apPaterno)->apMaterno($apMaterno)->get();
+        
+        return view('listaEmpleados.index',compact('data'));
+
+
+        /* $nombres= $request->get('nombres');
         $apPaterno= $request->get('apPaterno');
-        $nroDocumento= $request->get('nroDocumento');
+        $nroDocumento= $request->get('nroDocumento'); */
 
-        $listaEmpleado=Empleado::nombres($nombres)->apellidoPaterno($apPaterno)->nroDocumento('nroDocumento');
-
+/*         $listaEmpleado=Empleado::nombres($nombres)->apellidoPaterno($apPaterno)->nroDocumento('nroDocumento');
+ */
             /*  if($request)
             {
                 $query = trim($request->get('search'));
@@ -33,13 +44,13 @@ class ListaEmpleadoController extends Controller
             return view('listaEmpleados.index',['listaEmpleados'=>$listaEmpleado,'search'=>$query],compact('listaEmpleados'));
             }   */
 
-            $data= Empleado::join('tipoempleados','empleados.tipo_empleado_id','=','tipoempleados.id')
+            /* $data= Empleado::join('tipoempleados','empleados.tipo_empleado_id','=','tipoempleados.id')
             ->select('empleados.*','tipoempleados.descripcion as descripcionEmpleado')
-            ->get();
+            ->get(); */
             
-        return view('listaEmpleados.index',[
+        /* return view('listaEmpleados.index',[
             'listaEmpleados'=> Empleado::latest()->paginate()
-        ],compact('listaEmpleado'));
+        ],compact('data')); */
     }
     public function show(Empleado $listaEmpleados)
     {
@@ -58,21 +69,21 @@ class ListaEmpleadoController extends Controller
             'listaEmpleados'=> new Empleado
         ],compact('listaEmpleado'));
     }
-   /*  public function search(Request $request)
+     /* public function search(Request $request)
     {
         $nombres=$request->get('nombres');
-        $apellidoPaterno=$request->get('apellidoPaterno');
+        $apPaterno=$request->get('apPaterno');
         $nroDocumento   =$request->get('nroDocumento'); 
 
         $data =Empleado::orderBy('id','DESC')
             ->nombres('nombres')
-            ->apellidoPaterno('apellidoPaterno')
+            ->apPaterno('apPaterno')
              ->nroDocumento('nroDocumento') 
             ->paginate(5);
 
         return view('listaEmpleados.index',compact('data'));
 
-    } */
+    }  */
     public function store()
     {
         $listaEmpleado=Tipoempleados::all();
