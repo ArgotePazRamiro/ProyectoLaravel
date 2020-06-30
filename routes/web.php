@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
 Route::view('/','home') ->name ('home');
 Route::view('/about','about') ->name('about');
 
@@ -40,10 +41,16 @@ Route::get('/historiaClinica/{listaPacientes}','ListaPacienteController@show')->
 Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destroy')->name('listaPacientes.destroy');
 
 */
-//Route::resource('/listaEmpleados','ListaEmpleadoController')->names('listaEmpleados')->parameters(['nuevoEmpleado'=>'listaEmpleados']);
+Route::resource('/listaEmpleados','ListaEmpleadoController')
+->names('listaEmpleados')
+->parameters(['nuevoEmpleado'=>'listaEmpleados'])
+
+->middleware('esAdmin');
+Route::get('listall','ListaEmpleadoController@listall');
+
 /* Route::get('/listaEmpleados/search','ListaEmpleadoController@search')->name('listaEmpleados.search');
  */
-Route::get('/listaEmpleados','ListaEmpleadoController@index')->name('listaEmpleados.index');
+/* Route::get('/listaEmpleados','ListaEmpleadoController@index')->name('listaEmpleados.index');
 Route::get('/listaEmpleados/crear','ListaEmpleadoController@create')->name('listaEmpleados.create');
 Route::post('/listaEmpleados','ListaEmpleadoController@store')->name('listaEmpleados.store');
 Route::get('/listaEmpleados/{listaEmpleados}/editar','ListaEmpleadoController@edit')->name('listaEmpleados.edit');
@@ -51,7 +58,7 @@ Route::patch('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@update'
 //Route::post('/listaEmpleados/crear','ListaEmpleadoController@update')->name('listaEmpleados.update');
 Route::get('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@show')->name('listaEmpleados.show');
 Route::delete('/listaEmpleados/{listaEmpleados}','ListaEmpleadoController@destroy')->name('listaEmpleados.destroy');
-
+ */
 Route::get('/citas','citaController@index')->name('citas.index');
 Route::get('/citas/crear','citaController@create')->name('citas.create');
 Route::post('/citas','citaController@store')->name('citas.store');

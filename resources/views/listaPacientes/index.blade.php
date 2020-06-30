@@ -6,8 +6,6 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
           
-              
-          
     </div>
 
     <div class="table table-responsive">
@@ -31,23 +29,20 @@
                         </svg>
                     </a>
                 </th>
-
             </tr>
             </thead>
             <tbody>
                 @forelse ($listaPaciente as $portItem)
                 <tr>
                     <th scope="row">{{ $portItem->id }}</th>
-                    <td><u><a href="{{ route ('listaPacientes.show', $portItem) }}"
-                                style="color: blue">{{ $portItem->nombres }} {{ $portItem->apPaterno }}
-                                {{ $portItem->apMaterno }}</u></a></td>
+                    <td>{{ $portItem->nombres }} {{ $portItem->apPaterno }}{{ $portItem->apMaterno }}</td>
                     <td>{{ $portItem->sexo }}</td>
                     <td>{{ $portItem->edad }}</td>
                     <td>{{ $portItem->nroDocumento }}</td>
                     <td>{{ $portItem->direccion }}</td>
                     <td>{{ $portItem->telefonno}}</td>
                     <td>
-                        <a href="#" class=" btn btn-primary">
+                        <a href="{{route('listaPacientes.show',$portItem)}}" class=" btn btn-primary">
                             <svg class="bi bi-eye-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
@@ -55,7 +50,7 @@
                                     d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                             </svg>
                         </a>
-                        <a href="#" class=" btn btn-warning">
+                        <a href="{{route('listaPacientes.edit',$portItem)}}" class=" btn btn-warning">
                             <svg class="bi bi-receipt" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -64,7 +59,9 @@
                                     d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
                             </svg>
                         </a>
-                        <a href="#" class=" btn btn-danger">
+                        <a href="#" class=" btn btn-danger" onclick="document.getElementById('delete-paciente').submit()
+                        ">
+
                             <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -74,7 +71,10 @@
                             </svg>
                         </a>
                     </td>
-
+                    <form action="{{route('listaPacientes.destroy', $portItem)}}" id="delete-paciente" method="POST"
+                    class="d-none">
+                    @csrf @method('DELETE')
+                </form>
                 </tr>
                 @empty
             </tbody>
@@ -84,9 +84,6 @@
         @endforelse
 
         </table>
-
-        
-
     </div>
     {{$listaPaciente->links()}}
 </div>

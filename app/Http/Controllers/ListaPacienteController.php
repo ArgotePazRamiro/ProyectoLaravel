@@ -26,6 +26,12 @@ class ListaPacienteController extends Controller
         //return view('historiaClinica', compact('histoCli')); 
         
     }
+    /* public function listall()
+    {
+        return view('listaPacientes.listall',[
+            'listaPaciente'=> Paciente::latest()->paginate()
+        ]);
+    } */
     public function show(Paciente $listaPacientes)
     {
 
@@ -81,7 +87,7 @@ class ListaPacienteController extends Controller
             'telefonno'=> request('telefonno'),
             'edad'=> request('edad'),
         ]);
-        return redirect()->route('listaPacientes.show', $listaPacientes);
+        return redirect()->route('listaPacientes.index', $listaPacientes);
     }
 
     public function destroy(Paciente $listaPacientes)

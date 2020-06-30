@@ -26,6 +26,7 @@
         </h6>  --}}
         <!-- Boton para crear .... autentificar-->
         @auth
+        
         <h2><u><a class="btn btn-primary mb-0" href="{{route('listaEmpleados.create') }}"> 
             Crear Nuevo Empleado
         </a></u></h2>

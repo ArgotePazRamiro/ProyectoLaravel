@@ -13,7 +13,7 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany('App\Role');
     }
-    public function authorizeRoles($roles){
+    /* public function authorizeRoles($roles){
         if($this->hasAnyRole($roles)){
             return true;
         }
@@ -40,7 +40,7 @@ class User extends Authenticatable
             return true;
         }
         return false;
-    }
+    } */
     
     /**
      * The attributes that are mass assignable.
@@ -68,4 +68,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
+    public function esAdmin(){
+        if($this->role->nombre_rol=='administrador'){
+            return true;
+        }
+        return false;
+    }
+    public function esMedico(){
+        if($this->role->nombre_rol=='medico'){
+            return true;
+        }
+        return false;
+    }
 }

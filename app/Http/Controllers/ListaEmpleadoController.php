@@ -9,13 +9,14 @@ use App\Tipoempleados;
 
 class ListaEmpleadoController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth')->except('index','show');
+    public function __construct()
+    {
+        $this->middleware('esAdmin:false');
     }
 
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles('ale');
+
         $nombres=$request->get('nombres');
         $apPaterno=$request->get('apPaterno');
         $apMaterno=$request->get('apMaterno');
@@ -56,7 +57,6 @@ class ListaEmpleadoController extends Controller
     {
 
         $listaEmpleado=Tipoempleados::all();
-
         return view('listaEmpleados.show',[
             'listaEmpleados'=>$listaEmpleados
         ],compact('listaEmpleado'));
@@ -112,15 +112,13 @@ class ListaEmpleadoController extends Controller
 
     public function update(Empleado $listaEmpleados)
     {
-
         $listaEmpleados->update(request()->all());
         return redirect()->route('listaEmpleados.show', $listaEmpleados);
     }
 
     public function destroy(Empleado $listaEmpleados)
     {
-        $listaEmpleados->delete();
-        
+        $listaEmpleados->delete();   
         return redirect()->route('listaEmpleados.index');
     }
 
