@@ -18,20 +18,21 @@ class ListaPacienteController extends Controller
     public function index()
     {
         
-        return view('listaPacientes.index',[
+        return view('listaPacientes.index');
+        /* return view('listaPacientes.index',[
             'listaPaciente'=> Paciente::latest()->paginate()
-        ]);
+        ]); */
         
         //$histoCli = Paciente:: orderBy('created_at','asc')-> paginate();
         //return view('historiaClinica', compact('histoCli')); 
         
     }
-    /* public function listall()
+    public function listall()
     {
         return view('listaPacientes.listall',[
             'listaPaciente'=> Paciente::latest()->paginate()
         ]);
-    } */
+    }
     public function show(Paciente $listaPacientes)
     {
 
