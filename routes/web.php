@@ -43,10 +43,7 @@ Route::delete('/historiaClinica/{listaPacientes}','ListaPacienteController@destr
 */
 Route::resource('/listaEmpleados','ListaEmpleadoController')
 ->names('listaEmpleados')
-->parameters(['nuevoEmpleado'=>'listaEmpleados'])
-
-->middleware('esAdmin');
-Route::get('listall','ListaEmpleadoController@listall');
+->parameters(['nuevoEmpleado'=>'listaEmpleados']);
 
 /* Route::get('/listaEmpleados/search','ListaEmpleadoController@search')->name('listaEmpleados.search');
  */

@@ -11,7 +11,9 @@ class ListaEmpleadoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('esAdmin:false');
+        //$this->middleware('auth')->only('create','edit','delete');
+        //$this->middleware('auth');
+        //$this->middleware('esMedico');
     }
 
     public function index(Request $request)

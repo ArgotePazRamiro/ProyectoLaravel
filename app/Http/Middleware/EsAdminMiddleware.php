@@ -16,9 +16,10 @@ class EsAdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user=Auth::user();
-        if(!$user){
-            return redirect('/');
+        //$user=Auth::user();
+        if($request->user() && auth()->user()->rol_id !=="1"){
+            //return redirect('/');
+            abort(401);
         }
         return $next($request);
     }

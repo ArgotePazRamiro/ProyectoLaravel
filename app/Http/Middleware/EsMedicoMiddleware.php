@@ -18,8 +18,9 @@ class EsMedicoMiddleware
     public function handle($request, Closure $next)
     {
         $user=Auth::user();
-        if(!$user){
-            return redirect('/');
+        if($request->user() && auth()->user()->rol_id!=="2"){
+            //return redirect('/');
+            abort(404);
         }
         return $next($request);
     }
