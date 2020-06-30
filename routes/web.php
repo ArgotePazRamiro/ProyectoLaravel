@@ -23,11 +23,12 @@ Route::view('/about','about') ->name('about');
 ##Route::get('/ingresoPaciente','ingrePacienteController')->name('ingresoPaciente');
 
 
-
 Route::resource('historiaClinica','ListaPacienteController')
         ->names('listaPacientes')
         ->parameters(['historiaClinica'=>'listaPacientes'])
         ->middleware('auth');
+
+Route::get('listp', 'ListaPacienteController@listall');
 
 
 /*
