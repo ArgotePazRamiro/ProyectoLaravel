@@ -30,8 +30,39 @@ class ListaPacienteController extends Controller
     public function listall()
     {
         return view('listaPacientes.listall',[
-            'listaPaciente'=> Paciente::latest()->paginate()
+            'listaPaciente'=> Paciente::paginate()
         ]);
+    }
+    public function search(Request $request){
+        
+        if($request->ajax()){
+            $salida="";
+            $nombres=$request->get('nombres');
+            $apPaterno=$request->get('apPaterno');
+
+            $listaPaciente =Paciente::nombres($nombres)->apPaterno($apPaterno)->paginate(5);
+
+            if($listaPaciente){
+                foreach($listaPaciente as $paciente){
+                    $salida.='<tr>
+                            <td>'.$paciente->id.'</td>
+                            <td>'.$pacientes->nombres.'</td>
+                            <td>'.$pacientes->apPaterno.'</td>
+                            <td>'.$pacientes->apMaterno.'</td>
+                            <td>'.$pacientes->edad.'</td>
+                            <td>'.$pacientes->sexo.'</td>
+                            <td>'.$pacientes->nroDocumento.'</td>
+                            <td>'.$pacientes->direccion.'</td>
+                            <td>'.$pacientes->telefono.'</td>
+                            </tr>';
+                }
+                return response($salida);
+
+            }
+            else{
+                return response()->json(['false'=>'No hay datos']);
+            }
+        }
     }
     public function show(Paciente $listaPacientes)
     {

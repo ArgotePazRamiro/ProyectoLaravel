@@ -24,7 +24,7 @@
         @forelse ($listaPaciente as $portItem)
         <tr>
             <th scope="row">{{ $portItem->id }}</th>
-            <td>{{ $portItem->nombres }} {{ $portItem->apPaterno }}{{ $portItem->apMaterno }}</td>
+            <td>{{ $portItem->nombres }} {{ $portItem->apPaterno }} {{ $portItem->apMaterno }}</td>
             <td>{{ $portItem->sexo }}</td>
             <td>{{ $portItem->edad }}</td>
             <td>{{ $portItem->nroDocumento }}</td>
